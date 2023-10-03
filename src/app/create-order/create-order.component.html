@@ -1,0 +1,105 @@
+      
+      <div *ngIf="checkPackage" class="sizz alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        
+          <div >
+           Order Added successfully
+          </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    <div *ngIf="closeForm">
+      <form [formGroup]="projectForm"(submit)="submitHandler()"  class="needs-validation" novalidate>
+      <div style="display:flex;justify-content:flex-start">
+        <div class="mb-3" style="margin-right:30px">
+            <label for="name" class="form-label">Origin:</label>
+            <input type="text" class="form-control" id="name" name="name" formControlName="name" placeholder="origin"required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+              <div *ngIf="name.errors?.['required']">
+                This field is required.
+              </div>
+          </div>
+          </div>
+    
+          <div class="mb-3 ml-3">
+            <label for="email" class="form-label">Pincode:</label>
+            <input type="number" class="form-control" id="email" name="email"  formControlName="email" placeholder="Pincode" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+              <div *ngIf="email.errors?.['required']">
+                This field is required.
+              </div>
+          </div>
+          </div>
+      </div>
+        
+        <div style="display:flex;justify-content:flex-start">
+            <div class="mb-3"style="margin-right:30px">
+                <label for="phone" class="form-label">Destination:</label>
+                <input type="text" class="form-control" id="phone" name="phone"  formControlName="phone"placeholder="Destination" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="invalid-feedback">
+                  <div *ngIf="phone.errors?.['required']">
+                    This field is required.
+                  </div>
+              </div>
+              </div>
+        
+              <div class="mb-3 ml-3">
+                <label for="date" class="form-label">Pincode</label>
+                <input type="number" class="form-control" id="date"  formControlName="date"name="date"placeholder="Enter Date"required [class.is-invalid]="date.invalid && (date.dirty || date.touched)">
+                <div *ngIf="date.invalid && (date.dirty || date.touched)" class="invalid-feedback">
+                  <div *ngIf="date.errors?.['required']">
+                    This field is required.
+                  </div>
+              </div>
+              </div>
+        </div>
+       
+        <div class="mb-3">
+          <label for="from" class="form-label">PickUp Date</label>
+          <input type="date" class="form-control" id="from"  formControlName="from"name="to"placeholder="MM/DD/YYYY" required [class.is-invalid]="to.invalid && (to.dirty || to.touched)">
+          <div *ngIf="from.invalid && (from.dirty || from.touched)" class="invalid-feedback">
+            <div *ngIf="from.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="from" class="form-label">Equipment Type </label>
+            <input type="text" class="form-control" id="from"  formControlName="vehicleType"name="to"placeholder="Equipment Type " required [class.is-invalid]="vehicleType.invalid && (vehicleType.dirty || vehicleType.touched)">
+            <div *ngIf="vehicleType.invalid && (vehicleType.dirty || vehicleType.touched)" class="invalid-feedback">
+              <div *ngIf="vehicleType.errors?.['required']">
+                This field is required.
+              </div>
+          </div>
+          </div>
+         
+      
+        <div class="mb-3">
+          <label for="address" class="form-label">Quote Price</label>
+          <input type="address" class="form-control"  formControlName="address" id="address" name="address"placeholder="Quote Pric" required [class.is-invalid]="address.invalid && (address.dirty || address.touched)">
+          <div *ngIf="address.invalid && (address.dirty || address.touched)" class="invalid-feedback">
+            <div *ngIf="address.errors?.['required']">
+              This field is required.
+            </div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Price</label>
+            <input type="address" class="form-control"  formControlName="address" id="address" name="address"placeholder="Price" required [class.is-invalid]="address.invalid && (address.dirty || address.touched)">
+            <div *ngIf="address.invalid && (address.dirty || address.touched)" class="invalid-feedback">
+              <div *ngIf="address.errors?.['required']">
+                This field is required.
+              </div>
+          </div>
+          </div>
+  
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" >
+          <label class="form-check-label" for="exampleCheck1">Remeber Me</label>
+        </div>
+        <button type="submit" (click)="validate()"class="btn btn-dark">Submit</button>
+      </form>
+    </div>
+    
+

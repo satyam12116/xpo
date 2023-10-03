@@ -1,0 +1,40 @@
+<div class="filter-container">
+  <div>
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" [(ngModel)]="startDate">
+  </div>
+
+  <div>
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" [(ngModel)]="endDate">
+  </div>
+
+  <button (click)="filterData()">Filter Data</button>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Created Date</th>
+      <th>Pick Up Date</th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Equipment Type</th>
+      <th>Price</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of filteredData">
+      <td>{{ item.id }}</td>
+      <td>{{ item.createdDate }}</td>
+      <td>{{ item.pickupDate }}</td>
+      <td>{{ item.origin }}</td>
+      <td>{{ item.destination }}</td>
+      <td>{{ item.equipmentType }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.status }}</td>
+    </tr>
+  </tbody>
+</table>

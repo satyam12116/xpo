@@ -1,0 +1,47 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    margin: 20px;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  /* Styling for the date pickers and button */
+  .filter-container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .filter-container div {
+    margin-right: 10px;
+  }
+
+  input[type="date"] {
+    padding: 8px;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
